@@ -1,3 +1,5 @@
+---------------------------Getting Started----------------------------------
+
 This repository represents a game of chess played by two players. It is based on the GridWorld case study [http://www.collegeboard.com/student/testing/ap/compsci_a/case.html] which is part of the AP Computer Science A curriculum, found at http://www.collegeboard.com/student/testing/ap/sub_compscia.html?compscia. 
 
 The documentation for the project may be found in the Documentation directory. The beginning coder is advised to look there for instructions both on the rules that the game operates under, as well as instructions on operating GitHub. It is reprinted below, in order to provide a general library.
@@ -16,6 +18,8 @@ All of these operations will be covered in further entries. You should read the 
 6) Committing changes
 7) Pushing to the remote repository
 8) Checking for updates on the remote repository
+
+---------------------------Creating a GitHub account----------------------------------
 
 
 GitHub is a remote repository that works through a protocol called SSH. SSH stands for Secure Shell, and is an encrypted protocol for safe transmission of data. Its primary purpose is to wrap, or ‘tunnel’ other applications, and that is what occurs in this case.
@@ -88,6 +92,8 @@ You can find these instructions at http://help.github.com.iproxy.saverpigeeks.co
 You have now created your GitHub account.
 
 
+---------------------------Installing EGit----------------------------------
+
 EGit is the Eclipse plugin layered on top of JGit, a Java implementation of a Git client. Git is the protocol used by GitHub, and is essential for the source control system. EGit is an Eclipse plugin, and can be installed straight to Eclipse. To install EGit, follow these steps:
 
 1) Launch Eclipse
@@ -104,7 +110,7 @@ EGit is the Eclipse plugin layered on top of JGit, a Java implementation of a Gi
 
 You have now installed the EGit plugin for Eclipse. Documentation can be found at http://wiki.eclipse.org/EGit/User_Guide. 
 
-
+---------------------------Importing the Remote Repository----------------------------------
 
 To import a remote repository, you must first navigate to the repository. This project's URL is http://github.com/elias390234/Chess. In the middle of the page is a text field with text that says 'This URL has READ + WRITE access.' Make sure that SSH is selected, and copy the contents of that field. [For this project, it is git@github.com:elias390234/Chess.git]
 
@@ -115,12 +121,18 @@ Paste your URL into the URI field. The dialog box will complain, because EGit ca
 Hit next, and select the master branch of the project. Provide the local location for the project, and finish. Import the project when it's done loading. You've now checked out the project.
 
 
+---------------------------Adding new folders and files----------------------------------
+
 To add a new folder to the project, use the same operations you would normally - this is a normal Eclipse project. However, you will want to add these to the project itself on your repository. To do this, right click on the added file [you cannot do this to folders, but once you do it to a file in a folder, the folder will be added], find the Team sub menu from the right click menu, and select 'Add to version control.' Having done this, the file will be added the next time you perform a commit.
 
+---------------------------Committing Changes----------------------------------
 
 You have now made some changes, and added some files, and you're ready to commit to your local repository. To perform a commit, right click on the file you wish to commit [or a folder - if you commit a folder, all files inside will be commited. Thus, committing the root directory will commit the whole project], find the Team sub menu, and select the Committ... option. Write a brief commit message explaining what you've changed or added since the last commit, and finish it.
 
+---------------------------Pushing to the remote repository----------------------------------
 
 You have made your changes, and have committed to your local repository. You're now ready to push your local copy to the remote repository, and let your team work with the new code. After a commit, simply right click on the project root, select the Team sub menu, and choose the Push to... option. Use the default configured remote repository. On the second screen. click 'add all branches spec' to perform a complete update. Then, simply finish the update, and your changes will be sent to the remote repository.   
+
+---------------------------Checking for updates on the remote repository----------------------------------
 
 Whenever you start to code after a break, there's the possiblity that someone else has updated the remote repository, and your code is out of date. To make sure this doesn't happen, you should get in the habit of checking for updates whenever you start coding. It's fairly simple: right click your project directory, select the Team sub menu, and select the Fetch from... option. Use the default configured remote repository, and the default fetch specs. Hit next and finish, and the update will be performed.   

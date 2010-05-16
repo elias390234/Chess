@@ -1,1 +1,3 @@
-This is a simple game of Chess. 
+This repository represents a game of chess played by two players. It is based on the GridWorld case study [http://www.collegeboard.com/student/testing/ap/compsci_a/case.html] which is part of the AP Computer Science A curriculum, found at http://www.collegeboard.com/student/testing/ap/sub_compscia.html?compscia. 
+
+The documentation for the project may be found in the Documentation directory. The beginning coder is advised to look there for instructions both on the rules that the game operates under, as well as instructions on operating GitHub.

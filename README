@@ -4,7 +4,7 @@ This repository represents a game of chess played by two players. It is based on
 
 The documentation for the project may be found in the Documentation directory. The beginning coder is advised to look there for instructions both on the rules that the game operates under, as well as instructions on operating GitHub. It is reprinted below, in order to provide a general library.
 
-This file provides the basics for getting started with GitHub, using the Ganymede distribution of Eclipse on a Windows XP or higher system. GitHub is a social coding repository, which means that it serves as a storage place for your code. The proper model for GitHub is thus one of a bank: your code is stored on a remote repository, and you work on a local repository. There is only one remote repository, but there are as many local ones as there are people working on the code. Each local repository may be altered by the person editing it. These alterations will eventually be merged in the remote repository. It is the remote repository which will eventually hold the completed project. Thus, you can think of your local repository as a sandbox. You can do whatever you want to it, without corrupting your group’s project.
+This file provides the basics for getting started with GitHub, using the Galileo distribution of Eclipse on a Windows XP or higher system. GitHub is a social coding repository, which means that it serves as a storage place for your code. The proper model for GitHub is thus one of a bank: your code is stored on a remote repository, and you work on a local repository. There is only one remote repository, but there are as many local ones as there are people working on the code. Each local repository may be altered by the person editing it. These alterations will eventually be merged in the remote repository. It is the remote repository which will eventually hold the completed project. Thus, you can think of your local repository as a sandbox. You can do whatever you want to it, without corrupting your group’s project.
 
 There is some basic terminology that you will need to be able to work with GitHub. First, GitHub is a remote repository. This means that it holds your code, as was mentioned before. When you get the project from GitHub, you are performing an operation called a checkout, and this is performed the first time you get the project. When you are working on your project locally, there are two levels of saving. There is the normal saving that you perform on your file system, and this will be performed to save your files to persistent storage between sessions [this is what you are used to, and is what you do when you save files before closing your IDE]. However, when you reach a point where you have brought your code to a savable point [that is, a point that you would like to preserve, so that you can return your code to it if you make a mistake], then you are ready to perform a commit. A commit creates a checkpoint on your local repository – it overrides the local repository with your current project, and allows you to revert to that state at a later date if you so need. However, it does not move your code out to the remote repository on GitHub. When you reach a point where your code is ready for export [that is, you’re ready to try to synch it with your team’s code], then you’re ready to actually push it from your local repository to the remote repository.  
 
@@ -29,31 +29,31 @@ INSTALLING SSH
 
 To create a GitHub account, there are several steps. The first step involves installing SSH on your local system. To install SSH, follow these steps:
 
-1) Open a command prompt shell, using either WinKey + R and ‘cmd,’ or Start->Run…, type ‘cmd’ and hit enter, or Start->All Programs->Accessories->Command Prompt, type ‘cmd,’ and click Run.
+1) Open a command prompt shell, using either WinKey + R and 'cmd,' or Start->Run…, type 'cmd' and hit enter, or Start->All Programs->Accessories->Command Prompt, type 'cmd,' and click Run.
 
 2) Type ssh and hit enter. If you see the following:
 
-‘ssh’ is not recognized as an internal or external command,
+'ssh' is not recognized as an internal or external command,
 operable program or batch file.
 
 Then SSH is not installed on your system, and you will need to install it. Otherwise, skip the following instructions, and go to the section labeled CREATING THE ACCOUNT.
 
-3) You will need to install SSH. GitHub is compatible with OpenSSH, a distribution of SSH that works through Cygwin, a Linux-like shell for Windows that layers on top of the Command Prompt. Download the Cygwin installer from http://www.cygwin.com/setup.exe. Run the file, and select the option to ‘Install from the Internet.’ Specify your settings, and choose a mirror. You can find these instructions with sample images at http://pigtail.net/LRP/printsrv/cygwin-sshd.html. Follow these instructions for the selection of OpenSSH:
+3) You will need to install SSH. GitHub is compatible with OpenSSH, a distribution of SSH that works through Cygwin, a Linux-like shell for Windows that layers on top of the Command Prompt. Download the Cygwin installer from http://www.cygwin.com/setup.exe. Run the file, and select the option to 'Install from the Internet.' Specify your settings [select All Users only if you're an administrator], and choose a mirror [a mirror is simply a remote repository -- your selection doesn't matter, but I recommend an FTP]. If something fails during installation, try a different mirror. You can find these instructions with sample images at http://pigtail.net/LRP/printsrv/cygwin-sshd.html. [However, the image is out of date: some of the pieces present no longer exist, and the version of OpenSSH is old. Ignore these, and just get it to look similar] Follow these instructions for the selection of OpenSSH:
 
 As documented by this image [http://pigtail.net/LRP/printsrv/openssh-setup.png],  When a selection screen comes up (you can resize the windows to see better),
-click the little View button for "Full" view   , find the package "openssh", click on the word "skip" so that an   appears in Column B. This will ensure that OpenSSH is installed on your system. Now, finish the installation. This may take some time, as some of the parts are quite large. 
+click the little View button for "Full" view, find the package "openssh", click on the word "skip" so that an X appears in Column B. This will ensure that OpenSSH is installed on your system. Now, finish the installation without changing any of the other default settings. This may take some time, as some of the parts are quite large. 
 
 CREATING THE ACCOUNT
 
 1) Go to https://github.com/signup/free and fill out the information there. You do not need to worry about the SSH public key, leave that blank. You will take care of it at a later step. 
 
-2) Select the ‘Account Settings’ tab, or go to https://github.com/account. Select the button labeled ‘SSH Public Keys.’
+2) Select the 'Account Settings' tab, or go to https://github.com/account. Select the button labeled 'SSH Public Keys.'
 
-3) This, and the next few steps, are devoted to creating your keys for use with GitHub. Open a command prompt instance, as you did before when validating your SSH installation. Run the command [with your email instead of ‘username@domain.com’]: 
+3) This, and the next few steps, are devoted to creating your keys for use with GitHub. Open a command prompt instance, as you did before when validating your SSH installation. Run the command [with your email instead of 'username@domain.com']: 
 
-ssh-keygen -t rsa -C username@domain.com
+ssh-keygen -t rsa -C "username@domain.com"
 
-Sample output looks like this:
+Sample output looks like this [when you reach the file entry, you do not need to enter any file location. Use the default location [just hit enter]. You do not need a passphrase for this, as security is not that much of an issue]:
 
 
 ssh-keygen -t rsa -C "tekkub@gmail.com"
@@ -61,31 +61,62 @@ Generating public/private rsa key pair.
 Enter file in which to save the key (/c/Users/Tekkub/.ssh/id_rsa):
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
-Your iDentification has been saved in /c/Users/Tekkub/.ssh/id_rsa.
+Your identification has been saved in /c/Users/Tekkub/.ssh/id_rsa.
 Your public key has been saved in /c/Users/Tekkub/.ssh/id_rsa.pub.
 The key fingerprint is:
 e8:ae:60:8f:38:c2:98:1d:6d:84:60:8c:9e:dd:47:81 tekkub@gmail.com
 
+IF YOU RUN INTO PROBLEMS BECAUSE YOUR KEY CANNOT BE SAVED BECAUSE THE DIRECTORY DOES NOT EXIST [you are probably not an Administrator], THEN FOLLOW THESE STEPS:
+
+A) Run the command:
+
+cd C:\cygwin\home
+
+B) Run the command:
+
+mkdir "USERNAME"
+
+*Replace USERNAME with the name of your account. This will show up in the attempted creation from above. In the example case, it was Tekkub from Users.*
+
+C) Run the command:
+
+cd "USERNAME"
+
+*Replace USERNAME with the name of your acount*
+
+D) Run the command:
+
+mkdir .ssh
+
+E) Try the above step (3) again. It should work correctly now.
+
 
 4) Find your id_rsa.pub file [the path is given in the output from the generation step]. Open the file, and copy the contents [do not add any newlines, or delete anything. I recommend using Notepad].
 
-5) Click on the ‘Add another public key’ option in your GitHub account page from step (2).
+5) Click on the 'Add another public key' option in your GitHub account page from step (2).
 
-6) Paste the contents of the key into the ‘Key’ field, and leave the Title field blank.
+6) Paste the contents of the key into the 'Key' field, and leave the Title field blank.
 
-7) Click ‘Add key’
+7) Click 'Add key'
 
-8) To validate that you’ve done it correctly, we’ll use the command prompt. Open the command prompt. Now run the following command:
+8) To validate that you've done it correctly, we'll use the command prompt. Open the command prompt. Now run the following command:
 
 ssh git@github.com
 
-This will test the connection. If it’s configured correctly, you’ll see this:
+This will test the connection. If it's configured correctly, you'll see this:
 
 
-ERROR: Hi USERNAME! You've successfully authenticated, but GitHub does not pr
-ovide shell access
+ERROR: Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access
 Connection to github.com closed.
 
+If you see that the original message that SSH is not installed, DON'T PANIC! This indicates that you are not an administrator, and didn't modify your path when installing Cygwin. To test it, do the following:
+
+A) Run command:
+
+cd C:\cygwin\bin
+
+
+B) Run ssh git@github.com again
 
 You can find these instructions at http://help.github.com.iproxy.saverpigeeks.com//msysgit-key-setup/ as well. 
 
@@ -100,7 +131,7 @@ EGit is the Eclipse plugin layered on top of JGit, a Java implementation of a Gi
 
 2) Click Help -> Install New Software…
 
-3) Enter ‘http://download.eclipse.org/releases/helios’ into the ‘Work with’ field, and hit enter
+3) Enter 'http://download.eclipse.org/releases/helios' into the 'Work with' field, and hit enter
 
 4) Check Collaboration -> Eclipse EGit Feature (Incubation) and Collaboration -> Eclipse JGit Feature (Incubation)
 
@@ -118,7 +149,7 @@ Now open Eclipse. Right click in the Package Explorer, and select the Import... 
 
 Paste your URL into the URI field. The dialog box will complain, because EGit can no longer parse Git syntax URIs. To fix it, change the 'protocol' pull down menu to git+ssh. It should match this guide: http://github.com/guides/using-the-egit-eclipse-plugin-with-github. Make sure the username is 'git' and the password is blank.
 
-Hit next, and select the master branch of the project. Provide the local location for the project, and finish. Import the project when it's done loading. You've now checked out the project.
+Hit next, and select the master branch of the project. [If Eclipse prompts you to create folders, create all of them. Eclipse is recreating the SSH credentials on your local system. Once you've created the files, open Windows Explorer, and navigate to "C:\Documents and Settings\USERNAME\ssh" Open another instance of Windows Explorer, and navigate to "C:\cygwin\home\USERNAME\.ssh" Copy the files from the latter into the former. Once you've done that, restart Eclipse, and repeat the previous steps] Provide the local location for the project, and finish. Import the project when it's done loading. You've now checked out the project.
 
 
 ---------------------------Adding new folders and files----------------------------------
@@ -135,4 +166,4 @@ You have made your changes, and have committed to your local repository. You're 
 
 ---------------------------Checking for updates on the remote repository----------------------------------
 
-Whenever you start to code after a break, there's the possiblity that someone else has updated the remote repository, and your code is out of date. To make sure this doesn't happen, you should get in the habit of checking for updates whenever you start coding. It's fairly simple: right click your project directory, select the Team sub menu, and select the Fetch from... option. Use the default configured remote repository, and the default fetch specs. Hit next and finish, and the update will be performed.   
+Whenever you start to code after a break, there's the possibility that someone else has updated the remote repository, and your code is out of date. To make sure this doesn't happen, you should get in the habit of checking for updates whenever you start coding. It's fairly simple: right click your project directory, select the Team sub menu, and select the Fetch from... option. Use the default configured remote repository, and the default fetch specs. Hit next and finish, and the update will be performed.   

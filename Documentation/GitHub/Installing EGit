@@ -1,0 +1,17 @@
+EGit is the Eclipse plugin layered on top of JGit, a Java implementation of a Git client. Git is the protocol used by GitHub, and is essential for the source control system. EGit is an Eclipse plugin, and can be installed straight to Eclipse. To install EGit, follow these steps:
+
+1) Launch Eclipse
+
+2) Click Help -> Install New Software…
+
+3) Enter ‘http://download.eclipse.org/releases/helios’ into the ‘Work with’ field, and hit enter
+
+4) Check Collaboration -> Eclipse EGit Feature (Incubation) and Collaboration -> Eclipse JGit Feature (Incubation)
+
+5) Click Next, and agree to licenses as required
+
+6) Finish the installation, and restart when prompted 
+
+You have now installed the EGit plugin for Eclipse. Documentation can be found at http://wiki.eclipse.org/EGit/User_Guide. 
+
+ 

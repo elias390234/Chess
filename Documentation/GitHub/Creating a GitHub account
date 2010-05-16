@@ -1,0 +1,68 @@
+GitHub is a remote repository that works through a protocol called SSH. SSH stands for Secure Shell, and is an encrypted protocol for safe transmission of data. Its primary purpose is to wrap, or ‘tunnel’ other applications, and that is what occurs in this case.
+
+
+INSTALLING SSH
+
+To create a GitHub account, there are several steps. The first step involves installing SSH on your local system. To install SSH, follow these steps:
+
+1) Open a command prompt shell, using either WinKey + R and ‘cmd,’ or Start->Run…, type ‘cmd’ and hit enter, or Start->All Programs->Accessories->Command Prompt, type ‘cmd,’ and click Run.
+
+2) Type ssh and hit enter. If you see the following:
+
+‘ssh’ is not recognized as an internal or external command,
+operable program or batch file.
+
+Then SSH is not installed on your system, and you will need to install it. Otherwise, skip the following instructions, and go to the section labeled CREATING THE ACCOUNT.
+
+3) You will need to install SSH. GitHub is compatible with OpenSSH, a distribution of SSH that works through Cygwin, a Linux-like shell for Windows that layers on top of the Command Prompt. Download the Cygwin installer from http://www.cygwin.com/setup.exe. Run the file, and select the option to ‘Install from the Internet.’ Specify your settings, and choose a mirror. You can find these instructions with sample images at http://pigtail.net/LRP/printsrv/cygwin-sshd.html. Follow these instructions for the selection of OpenSSH:
+
+As documented by this image [http://pigtail.net/LRP/printsrv/openssh-setup.png],  When a selection screen comes up (you can resize the windows to see better),
+click the little View button for "Full" view   , find the package "openssh", click on the word "skip" so that an   appears in Column B. This will ensure that OpenSSH is installed on your system. Now, finish the installation. This may take some time, as some of the parts are quite large. 
+
+CREATING THE ACCOUNT
+
+1) Go to https://github.com/signup/free and fill out the information there. You do not need to worry about the SSH public key, leave that blank. You will take care of it at a later step. 
+
+2) Select the ‘Account Settings’ tab, or go to https://github.com/account. Select the button labeled ‘SSH Public Keys.’
+
+3) This, and the next few steps, are devoted to creating your keys for use with GitHub. Open a command prompt instance, as you did before when validating your SSH installation. Run the command [with your email instead of ‘username@domain.com’]: 
+
+ssh-keygen -t rsa -C username@domain.com
+
+Sample output looks like this:
+
+
+ssh-keygen -t rsa -C "tekkub@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Tekkub/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your iDentification has been saved in /c/Users/Tekkub/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Tekkub/.ssh/id_rsa.pub.
+The key fingerprint is:
+e8:ae:60:8f:38:c2:98:1d:6d:84:60:8c:9e:dd:47:81 tekkub@gmail.com
+
+
+4) Find your id_rsa.pub file [the path is given in the output from the generation step]. Open the file, and copy the contents [do not add any newlines, or delete anything. I recommend using Notepad].
+
+5) Click on the ‘Add another public key’ option in your GitHub account page from step (2).
+
+6) Paste the contents of the key into the ‘Key’ field, and leave the Title field blank.
+
+7) Click ‘Add key’
+
+8) To validate that you’ve done it correctly, we’ll use the command prompt. Open the command prompt. Now run the following command:
+
+ssh git@github.com
+
+This will test the connection. If it’s configured correctly, you’ll see this:
+
+
+ERROR: Hi USERNAME! You've successfully authenticated, but GitHub does not pr
+ovide shell access
+Connection to github.com closed.
+
+
+You can find these instructions at http://help.github.com.iproxy.saverpigeeks.com//msysgit-key-setup/ as well. 
+
+You have now created your GitHub account.

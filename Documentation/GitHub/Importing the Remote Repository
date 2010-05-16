@@ -1,0 +1,7 @@
+To import a remote repository, you must first navigate to the repository. This project's URL is http://github.com/elias390234/Chess. In the middle of the page is a text field with text that says 'This URL has READ + WRITE access.' Make sure that SSH is selected, and copy the contents of that field. [For this project, it is git@github.com:elias390234/Chess.git]
+
+Now open Eclipse. Right click in the Package Explorer, and select the Import... option. Expand the Git node, and select 'Git repository.'
+
+Paste your URL into the URI field. The dialog box will complain, because EGit can no longer parse Git syntax URIs. To fix it, change the 'protocol' pull down menu to git+ssh. It should match this guide: http://github.com/guides/using-the-egit-eclipse-plugin-with-github. Make sure the username is 'git' and the password is blank.
+
+Hit next, and select the master branch of the project. Provide the local location for the project, and finish. Import the project when it's done loading. You've now checked out the project.

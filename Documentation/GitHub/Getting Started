@@ -1,0 +1,14 @@
+This file provides the basics for getting started with GitHub, using the Ganymede distribution of Eclipse on a Windows XP or higher system. GitHub is a social coding repository, which means that it serves as a storage place for your code. The proper model for GitHub is thus one of a bank: your code is stored on a remote repository, and you work on a local repository. There is only one remote repository, but there are as many local ones as there are people working on the code. Each local repository may be altered by the person editing it. These alterations will eventually be merged in the remote repository. It is the remote repository which will eventually hold the completed project. Thus, you can think of your local repository as a sandbox. You can do whatever you want to it, without corrupting your group’s project.
+
+There is some basic terminology that you will need to be able to work with GitHub. First, GitHub is a remote repository. This means that it holds your code, as was mentioned before. When you get the project from GitHub, you are performing an operation called a checkout, and this is performed the first time you get the project. When you are working on your project locally, there are two levels of saving. There is the normal saving that you perform on your file system, and this will be performed to save your files to persistent storage between sessions [this is what you are used to, and is what you do when you save files before closing your IDE]. However, when you reach a point where you have brought your code to a savable point [that is, a point that you would like to preserve, so that you can return your code to it if you make a mistake], then you are ready to perform a commit. A commit creates a checkpoint on your local repository – it overrides the local repository with your current project, and allows you to revert to that state at a later date if you so need. However, it does not move your code out to the remote repository on GitHub. When you reach a point where your code is ready for export [that is, you’re ready to try to synch it with your team’s code], then you’re ready to actually push it from your local repository to the remote repository.  
+
+All of these operations will be covered in further entries. You should read the files in this directory in this order, before you start working with GitHub:
+
+1) Getting Started
+2) Creating a GitHub account
+3) Installing EGit
+4) Importing the Remote Repository
+5) Adding new folders and files
+6) Committing changes
+7) Pushing to the remote repository
+8) Checking for updates on the remote repository
